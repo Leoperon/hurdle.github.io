@@ -11,7 +11,6 @@ Obstacle.prototype.update = function(speed) {
 	this.onScreen = (this.x > -this.size);
 	this.x -= speed;
 };
-
 Obstacle.prototype.draw = function() {
 
 	fill(this.color);
@@ -19,12 +18,12 @@ Obstacle.prototype.draw = function() {
 	strokeWeight(2);
 	rect(this.x, this.y, this.size, this.size);
 };
-Obstacle.prototype.hits = function(dino) {
+Obstacle.prototype.hits = function(den) {
 
 	var halfSize = this.size / 2;
-	var minimumDistance = halfSize + (dino.radius); 
+	var minimumDistance = halfSize + (den.radius); 
 	var xCenter = this.x + halfSize;
 	var yCenter = this.y + halfSize;
-    var distance = dist(xCenter, yCenter, dino.x, dino.y); 
-    return (distance < minimumDistance); 
+    var distance = dist(xCenter, yCenter, den.x, den.y); 
+	return (distance < minimumDistance); 
 };
